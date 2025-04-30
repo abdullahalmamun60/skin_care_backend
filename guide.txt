@@ -1,0 +1,30 @@
+create .venv:
+python -m venv .venv
+
+active .venv:
+.venv\Scripts\activate
+
+Install Dependencies:
+pip install -r requirements.txt
+
+Generate Secure SECRET_KEY: Update .env with:`
+python -c "import secrets; print(secrets.token_hex(32))"
+
+
+Start Backend:
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+Test Endpoints:
+Register:
+curl -X POST "http://localhost:8000/auth/register" \
+    -F "name=John Doe" \
+    -F "email=john@example.com" \
+    -F "phone=1234567890" \
+    -F "password=securepass" \
+    -F "image=@/path/to/image.jpg"
+
+Predict:
+curl -X POST "http://localhost:8000/predict" -F "file=@/path/to/image.jpg"
+
+Verify Model:
+python -c "import tensorflow as tf; model = tf.keras.models.load_model('my_model.keras'); print(model.input_shape)"

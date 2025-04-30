@@ -1,0 +1,43 @@
+
+
+
+### given by vercel
+fastapi==0.104.1
+uvicorn==0.23.2
+python-multipart==0.0.6
+python-jose==3.3.0
+passlib==1.7.4
+pymongo==4.5.0
+pydantic==2.4.2
+pydantic-settings==2.0.3
+pydantic[email]==2.4.2
+python-dotenv==1.0.0
+tensorflow==2.19.0
+numpy==1.24.3
+Pillow==10.0.1
+bcrypt==4.0.1
+
+
+
+### .env
+# MongoDB Configuration
+MONGO_URI=mongodb://localhost:27017 
+DB_NAME=plant_disease_db
+
+# JWT Configuration
+SECRET_KEY=your-secure-random-key ALGORITHM=HS256
+
+# ACCESS_TOKEN_EXPIRE_MINUTES=10080
+
+# Model Configuration
+MODEL_PATH=potato_disease_model_kag_1.keras
+
+# Upload Directory
+UPLOAD_DIR=uploads
+
+# Admin User Configuration
+ADMIN_EMAIL=admin@example.com 
+ADMIN_PASSWORD=adminpassword
+
+# CORS Configuration
+CORS_ORIGINS=http://localhost:3000,http://localhost:5173
